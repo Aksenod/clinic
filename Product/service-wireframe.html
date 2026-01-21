@@ -1,0 +1,922 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Wireframe — Страница услуги</title>
+    <meta name="description" content="Ч/б прототип средней детализации — страница услуги (MVP)." />
+    <link rel="stylesheet" href="./service-wireframe.css" />
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <a class="skip-link" href="#main">Перейти к содержимому</a>
+
+      <header class="navbar_component" aria-label="Основная навигация">
+        <div class="padding-global">
+          <div class="container-large">
+            <div class="navbar_layout">
+              <div class="navbar_left">
+                <a class="navbar_brand" href="#" aria-label="На главную">
+                  <span class="wf-logo" aria-hidden="true"></span>
+                  <span class="text-weight-semibold">MESEDCLINIC</span>
+                </a>
+              </div>
+
+              <nav class="navbar_menu" aria-label="Меню">
+                <a class="navbar_link" href="#">Клиники</a>
+                <a class="navbar_link" href="#">Услуги</a>
+                <a class="navbar_link" href="#">Направления</a>
+                <a class="navbar_link" href="#">Врачи</a>
+                <a class="navbar_link" href="#">Акции</a>
+              </nav>
+
+              <div class="navbar_right">
+                <form class="navbar_search" role="search" aria-label="Поиск по сайту">
+                  <label class="sr-only" for="site-search">Поиск</label>
+                  <input
+                    class="form-input is-compact"
+                    id="site-search"
+                    name="q"
+                    type="search"
+                    placeholder="Поиск"
+                    autocomplete="off"
+                  />
+                </form>
+                <a class="button is-secondary is-compact" href="tel:+79999999999" aria-label="Позвонить">
+                  +7 (999) 999‑99‑99
+                </a>
+                <a class="button is-primary is-compact" href="#quiz">Записаться</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main id="main" class="main-wrapper" aria-label="Страница услуги">
+        <section class="section_service-hero">
+          <div class="padding-global">
+            <div class="container-large">
+              <div class="padding-section-medium">
+                <nav class="breadcrumbs" aria-label="Хлебные крошки">
+                  <ol class="breadcrumbs_list">
+                    <li class="breadcrumbs_item"><a class="breadcrumbs_link" href="#">Главная</a></li>
+                    <li class="breadcrumbs_item"><a class="breadcrumbs_link" href="#">Услуги</a></li>
+                    <li class="breadcrumbs_item" aria-current="page">
+                      <span class="breadcrumbs_current">Ведение беременности</span>
+                    </li>
+                  </ol>
+                </nav>
+
+                <div class="hero_layout">
+                  <div class="hero_left">
+                    <h1 class="heading-style-h1">Ведение беременности</h1>
+                    <p class="text-size-large text-color-muted">
+                      Наблюдение по понятному плану: диагностика, анализы, ответы врача и контроль важного — без лишних визитов.
+                    </p>
+
+                    <div class="hero_media">
+                      <div class="wf-media" role="img" aria-label="Изображение услуги (плейсхолдер)"></div>
+                      <div class="hero_media-row" aria-label="Плейсхолдеры миниатюр">
+                        <div class="wf-thumb" aria-hidden="true"></div>
+                        <div class="wf-thumb" aria-hidden="true"></div>
+                        <div class="wf-thumb" aria-hidden="true"></div>
+                        <div class="wf-thumb" aria-hidden="true"></div>
+                      </div>
+                    </div>
+
+                    <div class="trust_strip" aria-label="Доверие и факты">
+                      <div class="trust_item">
+                        <div class="wf-icon" aria-hidden="true"></div>
+                        <div class="trust_text">
+                          <div class="text-weight-semibold">Лицензия</div>
+                          <div class="text-size-small text-color-muted">Документы и реквизиты</div>
+                        </div>
+                      </div>
+                      <div class="trust_item">
+                        <div class="wf-icon" aria-hidden="true"></div>
+                        <div class="trust_text">
+                          <div class="text-weight-semibold">Опыт врачей</div>
+                          <div class="text-size-small text-color-muted">Стаж и профили</div>
+                        </div>
+                      </div>
+                      <div class="trust_item">
+                        <div class="wf-icon" aria-hidden="true"></div>
+                        <div class="trust_text">
+                          <div class="text-weight-semibold">Отзывы</div>
+                          <div class="text-size-small text-color-muted">Рейтинг / источники</div>
+                        </div>
+                      </div>
+                      <div class="trust_item">
+                        <div class="wf-icon" aria-hidden="true"></div>
+                        <div class="trust_text">
+                          <div class="text-weight-semibold">Безопасность</div>
+                          <div class="text-size-small text-color-muted">Протоколы и контроль</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <aside class="hero_right" aria-label="Запись на услугу">
+                    <div class="booking_card">
+                      <div class="booking_card-header">
+                        <div class="booking_price">
+                          <div class="text-size-small text-color-muted">Цена</div>
+                          <div class="text-size-xlarge text-weight-semibold">от 12 000 ₽</div>
+                        </div>
+                        <div class="booking_meta">
+                          <div class="meta_item">
+                            <div class="text-size-small text-color-muted">Длительность</div>
+                            <div class="text-weight-semibold">60–90 мин</div>
+                          </div>
+                          <div class="meta_item">
+                            <div class="text-size-small text-color-muted">Ближайшая запись</div>
+                            <div class="text-weight-semibold">Сегодня / завтра</div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="booking_card-body">
+                        <fieldset class="form-fieldset">
+                          <legend class="text-weight-semibold">Выберите филиал</legend>
+                          <div class="radio_cards">
+                            <label class="radio_card">
+                              <input class="radio_input" type="radio" name="branch" checked />
+                              <span class="radio_card-content">
+                                <span class="text-weight-semibold">Бутово</span>
+                                <span class="text-size-small text-color-muted">Адрес / метро</span>
+                              </span>
+                            </label>
+                            <label class="radio_card">
+                              <input class="radio_input" type="radio" name="branch" />
+                              <span class="radio_card-content">
+                                <span class="text-weight-semibold">Арбатская</span>
+                                <span class="text-size-small text-color-muted">Адрес / метро</span>
+                              </span>
+                            </label>
+                            <label class="radio_card">
+                              <input class="radio_input" type="radio" name="branch" />
+                              <span class="radio_card-content">
+                                <span class="text-weight-semibold">Балашиха</span>
+                                <span class="text-size-small text-color-muted">Адрес / район</span>
+                              </span>
+                            </label>
+                          </div>
+                        </fieldset>
+
+                        <div class="button-group is-stretch">
+                          <a class="button is-primary" href="#quiz">Записаться</a>
+                          <a class="button is-secondary" href="#question">Задать вопрос</a>
+                        </div>
+
+                        <div class="messengers" aria-label="Мессенджеры">
+                          <a class="chip" href="#" aria-label="Написать в WhatsApp">WhatsApp</a>
+                          <a class="chip" href="#" aria-label="Написать в Telegram">Telegram</a>
+                          <a class="chip" href="#" aria-label="Заказать звонок">Перезвоним</a>
+                        </div>
+
+                        <div class="legal_note text-size-small text-color-muted">
+                          Нажимая «Записаться», вы соглашаетесь с обработкой персональных данных.
+                        </div>
+                      </div>
+                    </div>
+                  </aside>
+                </div>
+
+                <div class="anchor_nav" aria-label="Навигация по странице">
+                  <a class="anchor_link" href="#about">Что это</a>
+                  <a class="anchor_link" href="#indications">Показания</a>
+                  <a class="anchor_link" href="#how">Как проходит</a>
+                  <a class="anchor_link" href="#included">Что входит</a>
+                  <a class="anchor_link" href="#prices">Цены</a>
+                  <a class="anchor_link" href="#doctors">Врачи</a>
+                  <a class="anchor_link" href="#branches">Филиалы</a>
+                  <a class="anchor_link" href="#reviews">Отзывы</a>
+                  <a class="anchor_link" href="#faq">FAQ</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section_promo" aria-label="Акция (показывать, если услуга участвует)">
+          <div class="padding-global">
+            <div class="container-large">
+              <div class="padding-section-small">
+                <div class="promo_banner">
+                  <div class="promo_left">
+                    <div class="badge">АКЦИЯ</div>
+                    <div class="promo_text">
+                      <div class="text-weight-semibold">Диагностика беременности — 4 100 ₽</div>
+                      <div class="text-size-small text-color-muted">
+                        Блок отображается только если услуга участвует в акции. Здесь — пример.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="promo_right">
+                    <a class="button is-secondary" href="#">Подробнее</a>
+                    <a class="button is-primary" href="#quiz">Записаться по акции</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="about" class="section_content">
+          <div class="padding-global">
+            <div class="container-large">
+              <div class="padding-section-large">
+                <div class="section_header">
+                  <h2 class="heading-style-h2">Коротко об услуге</h2>
+                  <p class="text-color-muted">Пояснение “что это” + какому пациенту подходит и какой результат ожидать.</p>
+                </div>
+
+                <div class="content_2col">
+                  <div class="content_text">
+                    <p>
+                      Здесь — основной текст 6–10 строк: чем полезно наблюдение, как снижаем тревожность, что контролируем,
+                      почему удобно (план, напоминания, связь с врачом).
+                    </p>
+                    <p class="text-color-muted">
+                      Важно: медицинские заявления должны быть аккуратными; часть формулировок можно вынести в FAQ.
+                    </p>
+                  </div>
+
+                  <div class="facts_card" aria-label="Ключевые факты">
+                    <div class="facts_title text-weight-semibold">Ключевые факты</div>
+                    <ul class="facts_list">
+                      <li class="facts_item">
+                        <span class="facts_key">Подходит:</span>
+                        <span class="facts_value">1–3 триместр / планирование наблюдения</span>
+                      </li>
+                      <li class="facts_item">
+                        <span class="facts_key">Результат:</span>
+                        <span class="facts_value">план обследований + контроль динамики</span>
+                      </li>
+                      <li class="facts_item">
+                        <span class="facts_key">Подготовка:</span>
+                        <span class="facts_value">обычно не требуется</span>
+                      </li>
+                      <li class="facts_item">
+                        <span class="facts_key">Анализы/УЗИ:</span>
+                        <span class="facts_value">по сроку и показаниям</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="indications" class="section_content">
+          <div class="padding-global">
+            <div class="container-large">
+              <div class="padding-section-large">
+                <div class="section_header">
+                  <h2 class="heading-style-h2">Показания</h2>
+                  <p class="text-color-muted">Список ситуаций, когда стоит записаться.</p>
+                </div>
+
+                <div class="indications_layout">
+                  <ul class="checklist">
+                    <li class="checklist_item">Беременность подтверждена — нужно наблюдение и план.</li>
+                    <li class="checklist_item">Есть вопросы по анализам / УЗИ / самочувствию.</li>
+                    <li class="checklist_item">Хронические заболевания / риски — нужен контроль.</li>
+                    <li class="checklist_item">Повышенная тревожность — нужен понятный маршрут.</li>
+                    <li class="checklist_item">Нужны справки/документы (если применимо).</li>
+                    <li class="checklist_item">Хочу вести беременность у конкретного врача.</li>
+                  </ul>
+
+                  <div class="callout_card" aria-label="Когда срочно к врачу">
+                    <div class="text-weight-semibold">Когда срочно к врачу</div>
+                    <p class="text-size-small text-color-muted">
+                      Плейсхолдер для списка “красных флагов”. Финальные формулировки согласуем с врачом/юристом.
+                    </p>
+                    <ul class="mini_list">
+                      <li>Сильная боль / кровянистые выделения</li>
+                      <li>Резкое ухудшение самочувствия</li>
+                      <li>Температура / признаки инфекции</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="how" class="section_content">
+          <div class="padding-global">
+            <div class="container-large">
+              <div class="padding-section-large">
+                <div class="section_header">
+                  <h2 class="heading-style-h2">Как проходит</h2>
+                  <p class="text-color-muted">Пошаговый сценарий + что взять с собой.</p>
+                </div>
+
+                <div class="steps_grid" role="list">
+                  <div class="step_card" role="listitem">
+                    <div class="step_top">
+                      <div class="wf-icon" aria-hidden="true"></div>
+                      <div class="text-weight-semibold">1. Запись</div>
+                    </div>
+                    <p class="text-size-small text-color-muted">Выбираете филиал и удобное время.</p>
+                  </div>
+                  <div class="step_card" role="listitem">
+                    <div class="step_top">
+                      <div class="wf-icon" aria-hidden="true"></div>
+                      <div class="text-weight-semibold">2. Приём</div>
+                    </div>
+                    <p class="text-size-small text-color-muted">Сбор анамнеза и план наблюдения.</p>
+                  </div>
+                  <div class="step_card" role="listitem">
+                    <div class="step_top">
+                      <div class="wf-icon" aria-hidden="true"></div>
+                      <div class="text-weight-semibold">3. Диагностика</div>
+                    </div>
+                    <p class="text-size-small text-color-muted">Анализы/УЗИ по сроку и показаниям.</p>
+                  </div>
+                  <div class="step_card" role="listitem">
+                    <div class="step_top">
+                      <div class="wf-icon" aria-hidden="true"></div>
+                      <div class="text-weight-semibold">4. Сопровождение</div>
+                    </div>
+                    <p class="text-size-small text-color-muted">Контроль динамики и ответы по плану.</p>
+                  </div>
+                </div>
+
+                <div class="info_bar" aria-label="Практическая информация">
+                  <div class="info_item">
+                    <div class="text-size-small text-color-muted">Сколько визитов</div>
+                    <div class="text-weight-semibold">По триместрам / индивидуально</div>
+                  </div>
+                  <div class="info_item">
+                    <div class="text-size-small text-color-muted">Что взять</div>
+                    <div class="text-weight-semibold">Документы + результаты анализов (если есть)</div>
+                  </div>
+                  <div class="info_item">
+                    <div class="text-size-small text-color-muted">Формат</div>
+                    <div class="text-weight-semibold">В клинике (онлайн — опционально)</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="included" class="section_content">
+          <div class="padding-global">
+            <div class="container-large">
+              <div class="padding-section-large">
+                <div class="section_header">
+                  <h2 class="heading-style-h2">Что входит</h2>
+                  <p class="text-color-muted">Состав услуги: группировка и понятные ожидания.</p>
+                </div>
+
+                <div class="accordion">
+                  <details class="accordion_item" open>
+                    <summary class="accordion_summary">
+                      <span class="text-weight-semibold">Приём и план</span>
+                      <span class="text-size-small text-color-muted">осмотр / рекомендации</span>
+                    </summary>
+                    <div class="accordion_content">
+                      <ul class="bullets">
+                        <li>Сбор анамнеза и жалоб</li>
+                        <li>Осмотр (при необходимости)</li>
+                        <li>План наблюдения на период</li>
+                      </ul>
+                    </div>
+                  </details>
+
+                  <details class="accordion_item">
+                    <summary class="accordion_summary">
+                      <span class="text-weight-semibold">Диагностика</span>
+                      <span class="text-size-small text-color-muted">анализы / УЗИ</span>
+                    </summary>
+                    <div class="accordion_content">
+                      <ul class="bullets">
+                        <li>Список анализов по сроку</li>
+                        <li>Скрининги (если применимо)</li>
+                        <li>Интерпретация результатов</li>
+                      </ul>
+                    </div>
+                  </details>
+
+                  <details class="accordion_item">
+                    <summary class="accordion_summary">
+                      <span class="text-weight-semibold">Сопровождение</span>
+                      <span class="text-size-small text-color-muted">контроль и связь</span>
+                    </summary>
+                    <div class="accordion_content">
+                      <ul class="bullets">
+                        <li>Контроль динамики</li>
+                        <li>Ответы по плану</li>
+                        <li>Коррекция рекомендаций</li>
+                      </ul>
+                    </div>
+                  </details>
+                </div>
+
+                <div class="note_card">
+                  <div class="text-weight-semibold">Если есть пакеты</div>
+                  <p class="text-size-small text-color-muted">
+                    Здесь можно заменить аккордеон на сравнительную таблицу 2–3 пакетов (Базовый / Стандарт / Премиум 24/7).
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="prices" class="section_content">
+          <div class="padding-global">
+            <div class="container-large">
+              <div class="padding-section-large">
+                <div class="section_header">
+                  <h2 class="heading-style-h2">Цены</h2>
+                  <p class="text-color-muted">Цены должны жить на услугах (и агрегироваться на странице /ceny/).</p>
+                </div>
+
+                <div class="table_component" role="table" aria-label="Таблица цен">
+                  <div class="table_row table_head" role="row">
+                    <div class="table_cell is-wide" role="columnheader">Наименование</div>
+                    <div class="table_cell" role="columnheader">Цена</div>
+                    <div class="table_cell is-actions" role="columnheader">Действие</div>
+                  </div>
+
+                  <div class="table_row" role="row">
+                    <div class="table_cell is-wide" role="cell">Ведение беременности (первичный приём)</div>
+                    <div class="table_cell" role="cell">от 3 000 ₽</div>
+                    <div class="table_cell is-actions" role="cell"><a class="button is-secondary is-small" href="#quiz">Записаться</a></div>
+                  </div>
+                  <div class="table_row" role="row">
+                    <div class="table_cell is-wide" role="cell">Ведение беременности (программа)</div>
+                    <div class="table_cell" role="cell">от 12 000 ₽</div>
+                    <div class="table_cell is-actions" role="cell"><a class="button is-secondary is-small" href="#quiz">Записаться</a></div>
+                  </div>
+                  <div class="table_row" role="row">
+                    <div class="table_cell is-wide" role="cell">Консультация по анализам / УЗИ</div>
+                    <div class="table_cell" role="cell">от 2 500 ₽</div>
+                    <div class="table_cell is-actions" role="cell"><a class="button is-secondary is-small" href="#quiz">Записаться</a></div>
+                  </div>
+                </div>
+
+                <p class="text-size-small text-color-muted">
+                  Примечание: точная стоимость может зависеть от объёма диагностики и определяется врачом после консультации.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="doctors" class="section_content">
+          <div class="padding-global">
+            <div class="container-large">
+              <div class="padding-section-large">
+                <div class="section_header">
+                  <h2 class="heading-style-h2">Врачи, которые ведут услугу</h2>
+                  <p class="text-color-muted">Карточки врачей — ключ к доверию (E‑E‑A‑T).</p>
+                </div>
+
+                <div class="cards_grid">
+                  <article class="card_doctor">
+                    <div class="card_media wf-avatar" aria-hidden="true"></div>
+                    <div class="card_body">
+                      <div class="text-weight-semibold">ФИО врача</div>
+                      <div class="text-size-small text-color-muted">Акушер‑гинеколог • стаж 12 лет</div>
+                      <div class="chips_row" aria-label="Филиалы врача">
+                        <span class="chip is-muted">Бутово</span>
+                        <span class="chip is-muted">Арбатская</span>
+                      </div>
+                      <a class="button is-secondary is-small" href="#">Профиль врача</a>
+                    </div>
+                  </article>
+
+                  <article class="card_doctor">
+                    <div class="card_media wf-avatar" aria-hidden="true"></div>
+                    <div class="card_body">
+                      <div class="text-weight-semibold">ФИО врача</div>
+                      <div class="text-size-small text-color-muted">Врач УЗД • стаж 9 лет</div>
+                      <div class="chips_row" aria-label="Филиалы врача">
+                        <span class="chip is-muted">Балашиха</span>
+                      </div>
+                      <a class="button is-secondary is-small" href="#">Профиль врача</a>
+                    </div>
+                  </article>
+
+                  <article class="card_doctor">
+                    <div class="card_media wf-avatar" aria-hidden="true"></div>
+                    <div class="card_body">
+                      <div class="text-weight-semibold">ФИО врача</div>
+                      <div class="text-size-small text-color-muted">Акушер‑гинеколог • стаж 15 лет</div>
+                      <div class="chips_row" aria-label="Филиалы врача">
+                        <span class="chip is-muted">Арбатская</span>
+                      </div>
+                      <a class="button is-secondary is-small" href="#">Профиль врача</a>
+                    </div>
+                  </article>
+                </div>
+
+                <div class="section_footer">
+                  <a class="text-link" href="#">Все врачи по услуге →</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="branches" class="section_content">
+          <div class="padding-global">
+            <div class="container-large">
+              <div class="padding-section-large">
+                <div class="section_header">
+                  <h2 class="heading-style-h2">Где оказываем услугу</h2>
+                  <p class="text-color-muted">3 филиала, без генерации дублей “услуга × филиал”.</p>
+                </div>
+
+                <div class="cards_grid is-3">
+                  <article class="card_branch">
+                    <div class="card_body">
+                      <div class="text-weight-semibold">Филиал: Бутово</div>
+                      <div class="text-size-small text-color-muted">Адрес, метро, часы</div>
+                      <div class="status_row">
+                        <span class="chip">Услуга доступна</span>
+                        <span class="chip is-muted">Запись: сегодня</span>
+                      </div>
+                      <div class="wf-map" role="img" aria-label="Карта (плейсхолдер)"></div>
+                      <div class="button-group is-stretch">
+                        <a class="button is-secondary" href="#">Как добраться</a>
+                        <a class="button is-primary" href="#quiz">Записаться сюда</a>
+                      </div>
+                    </div>
+                  </article>
+
+                  <article class="card_branch">
+                    <div class="card_body">
+                      <div class="text-weight-semibold">Филиал: Арбатская</div>
+                      <div class="text-size-small text-color-muted">Адрес, метро, часы</div>
+                      <div class="status_row">
+                        <span class="chip">Услуга доступна</span>
+                        <span class="chip is-muted">Запись: завтра</span>
+                      </div>
+                      <div class="wf-map" role="img" aria-label="Карта (плейсхолдер)"></div>
+                      <div class="button-group is-stretch">
+                        <a class="button is-secondary" href="#">Как добраться</a>
+                        <a class="button is-primary" href="#quiz">Записаться сюда</a>
+                      </div>
+                    </div>
+                  </article>
+
+                  <article class="card_branch">
+                    <div class="card_body">
+                      <div class="text-weight-semibold">Филиал: Балашиха</div>
+                      <div class="text-size-small text-color-muted">Адрес, район, часы</div>
+                      <div class="status_row">
+                        <span class="chip">Услуга доступна</span>
+                        <span class="chip is-muted">Запись: уточнить</span>
+                      </div>
+                      <div class="wf-map" role="img" aria-label="Карта (плейсхолдер)"></div>
+                      <div class="button-group is-stretch">
+                        <a class="button is-secondary" href="#">Как добраться</a>
+                        <a class="button is-primary" href="#quiz">Записаться сюда</a>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="reviews" class="section_content">
+          <div class="padding-global">
+            <div class="container-large">
+              <div class="padding-section-large">
+                <div class="section_header">
+                  <h2 class="heading-style-h2">Отзывы</h2>
+                  <p class="text-color-muted">С возможностью фильтрации по врачу/филиалу (в прототипе — плейсхолдер).</p>
+                </div>
+
+                <div class="reviews_header">
+                  <div class="rating_card" aria-label="Рейтинг">
+                    <div class="text-weight-semibold">Рейтинг: 4,8</div>
+                    <div class="text-size-small text-color-muted">на основе 120 отзывов</div>
+                  </div>
+                  <div class="filter_row" aria-label="Фильтры отзывов">
+                    <button class="chip is-button" type="button">Все</button>
+                    <button class="chip is-button" type="button">По врачам</button>
+                    <button class="chip is-button" type="button">По филиалам</button>
+                  </div>
+                </div>
+
+                <div class="cards_grid">
+                  <article class="card_review">
+                    <div class="card_body">
+                      <div class="text-weight-semibold">Имя • 2 дня назад</div>
+                      <div class="text-size-small text-color-muted">Филиал: Бутово • Врач: ФИО</div>
+                      <p class="text-size-small">
+                        Плейсхолдер текста отзыва на 2–3 строки. Важно: юридически корректная подача и источник.
+                      </p>
+                    </div>
+                  </article>
+                  <article class="card_review">
+                    <div class="card_body">
+                      <div class="text-weight-semibold">Имя • 1 неделю назад</div>
+                      <div class="text-size-small text-color-muted">Филиал: Арбатская • Врач: ФИО</div>
+                      <p class="text-size-small">Плейсхолдер текста отзыва на 2–3 строки.</p>
+                    </div>
+                  </article>
+                  <article class="card_review">
+                    <div class="card_body">
+                      <div class="text-weight-semibold">Имя • 2 недели назад</div>
+                      <div class="text-size-small text-color-muted">Филиал: Балашиха • Врач: ФИО</div>
+                      <p class="text-size-small">Плейсхолдер текста отзыва на 2–3 строки.</p>
+                    </div>
+                  </article>
+                </div>
+
+                <p class="text-size-small text-color-muted">
+                  Дисклеймер: отзывы могут быть опубликованы только с согласия пациента; указываем источник/модерацию.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="faq" class="section_content">
+          <div class="padding-global">
+            <div class="container-large">
+              <div class="padding-section-large">
+                <div class="section_header">
+                  <h2 class="heading-style-h2">FAQ</h2>
+                  <p class="text-color-muted">Снятие возражений, подготовка, стоимость, сроки, документы.</p>
+                </div>
+
+                <div class="accordion">
+                  <details class="accordion_item">
+                    <summary class="accordion_summary">
+                      <span class="text-weight-semibold">С чего начать?</span>
+                      <span class="text-size-small text-color-muted">первый визит</span>
+                    </summary>
+                    <div class="accordion_content">
+                      <p class="text-size-small">
+                        Плейсхолдер ответа. Идеально — коротко + ссылка на “Как проходит” / “Цены”.
+                      </p>
+                    </div>
+                  </details>
+
+                  <details class="accordion_item">
+                    <summary class="accordion_summary">
+                      <span class="text-weight-semibold">Почему цена “от”?</span>
+                      <span class="text-size-small text-color-muted">плавающая стоимость</span>
+                    </summary>
+                    <div class="accordion_content">
+                      <p class="text-size-small">
+                        Цена зависит от объёма диагностики и индивидуальных показаний. Точную стоимость врач назовёт после консультации.
+                      </p>
+                    </div>
+                  </details>
+
+                  <details class="accordion_item">
+                    <summary class="accordion_summary">
+                      <span class="text-weight-semibold">Какие анализы нужны?</span>
+                      <span class="text-size-small text-color-muted">подготовка</span>
+                    </summary>
+                    <div class="accordion_content">
+                      <p class="text-size-small">Плейсхолдер. Указать, что список зависит от срока и рекомендаций врача.</p>
+                    </div>
+                  </details>
+                </div>
+
+                <div class="question_card" id="question" aria-label="Задать вопрос">
+                  <div class="text-weight-semibold">Не нашли ответ?</div>
+                  <p class="text-size-small text-color-muted">
+                    Плейсхолдер формы вопроса (в MVP можно вести на мессенджер/звонок).
+                  </p>
+                  <form class="form_component" action="#" method="get">
+                    <div class="form_grid">
+                      <div class="form_field">
+                        <label class="form-label" for="q-name">Имя</label>
+                        <input class="form-input" id="q-name" name="name" type="text" placeholder="Как к вам обращаться" />
+                      </div>
+                      <div class="form_field">
+                        <label class="form-label" for="q-phone">Телефон</label>
+                        <input class="form-input" id="q-phone" name="phone" type="tel" placeholder="+7" />
+                      </div>
+                      <div class="form_field is-full">
+                        <label class="form-label" for="q-text">Вопрос</label>
+                        <textarea class="form-textarea" id="q-text" name="question" rows="4" placeholder="Коротко опишите"></textarea>
+                      </div>
+                    </div>
+                    <button class="button is-primary" type="submit">Отправить вопрос</button>
+                    <p class="text-size-small text-color-muted">
+                      Дисклеймер: ответ не является мед. услугой и не заменяет консультацию специалиста.
+                    </p>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="related" class="section_content">
+          <div class="padding-global">
+            <div class="container-large">
+              <div class="padding-section-large">
+                <div class="section_header">
+                  <h2 class="heading-style-h2">Похожие услуги</h2>
+                  <p class="text-color-muted">Перелинковка из hub → leaf → “что лечим”.</p>
+                </div>
+
+                <div class="cards_grid">
+                  <a class="card_link" href="#">
+                    <div class="card_simple">
+                      <div class="text-weight-semibold">Диагностика беременности</div>
+                      <div class="text-size-small text-color-muted">УЗИ + анализы + приём</div>
+                    </div>
+                  </a>
+                  <a class="card_link" href="#">
+                    <div class="card_simple">
+                      <div class="text-weight-semibold">Скрининг 1 триместр</div>
+                      <div class="text-size-small text-color-muted">Плейсхолдер</div>
+                    </div>
+                  </a>
+                  <a class="card_link" href="#">
+                    <div class="card_simple">
+                      <div class="text-weight-semibold">НИПТ</div>
+                      <div class="text-size-small text-color-muted">Категория</div>
+                    </div>
+                  </a>
+                  <a class="card_link" href="#">
+                    <div class="card_simple">
+                      <div class="text-weight-semibold">Первичный приём гинеколога</div>
+                      <div class="text-size-small text-color-muted">Если продукт выделен</div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="quiz" class="section_quiz" aria-label="Запись на услугу (быстрая форма и квиз)">
+          <div class="padding-global">
+            <div class="container-large">
+              <div class="padding-section-large">
+                <div class="cta_band">
+                  <div class="cta_left">
+                    <h2 class="heading-style-h2">Запись на ведение беременности</h2>
+                    <p class="text-color-muted">
+                      На услуге можем использовать <strong>два разных сценария записи</strong>: быстрая форма (2–3 поля) или
+                      квиз. Оба варианта показаны ниже как прототип.
+                    </p>
+                  </div>
+                  <div class="cta_right">
+                    <a class="button is-secondary" href="tel:+79999999999">Позвонить</a>
+                  </div>
+                </div>
+
+                <div class="recording_layout" aria-label="Два варианта записи">
+                  <div class="recording_option">
+                    <div class="text-weight-semibold">Вариант 1 — быстрая запись</div>
+                    <p class="text-size-small text-color-muted">
+                      Короткая форма на 2–3 поля. Подходит для контекстной рекламы и сценариев “я уже готов(а) записаться”.
+                    </p>
+                    <form class="form_component" action="#" method="get">
+                      <div class="form_grid">
+                        <div class="form_field">
+                          <label class="form-label" for="fast-name">Имя</label>
+                          <input class="form-input" id="fast-name" name="name" type="text" placeholder="Как к вам обращаться" />
+                        </div>
+                        <div class="form_field">
+                          <label class="form-label" for="fast-phone">Телефон</label>
+                          <input class="form-input" id="fast-phone" name="phone" type="tel" placeholder="+7" />
+                        </div>
+                        <div class="form_field is-full">
+                          <label class="form-label" for="fast-branch">Филиал</label>
+                          <select class="form-input" id="fast-branch" name="branch">
+                            <option>Выберите филиал</option>
+                            <option>Бутово</option>
+                            <option>Арбатская</option>
+                            <option>Балашиха</option>
+                          </select>
+                        </div>
+                        <div class="form_field is-full">
+                          <label class="form-label" for="fast-comment">Комментарий (опционально)</label>
+                          <textarea
+                            class="form-textarea"
+                            id="fast-comment"
+                            name="comment"
+                            rows="3"
+                            placeholder="Удобное время, вопросы, пожелания"
+                          ></textarea>
+                        </div>
+                      </div>
+                      <button class="button is-primary" type="submit">Записаться быстро</button>
+                      <p class="text-size-small text-color-muted">
+                        Текст согласия на обработку ПД + дисклеймер “имеются противопоказания, нужна консультация специалиста”.
+                      </p>
+                    </form>
+                  </div>
+
+                  <div class="recording_option">
+                    <div class="text-weight-semibold">Вариант 2 — запись через квиз</div>
+                    <p class="text-size-small text-color-muted">
+                      Многошаговый сценарий с уточнением срока, филиала и задач. Подходит для таргета и тёплой аудитории.
+                    </p>
+
+                    <div class="quiz_card" aria-label="Прототип квиза">
+                      <div class="quiz_step">
+                        <div class="text-weight-semibold">Шаг 1 из 4</div>
+                        <p class="text-size-small text-color-muted">Выберите срок (пример)</p>
+                        <div class="chips_row">
+                          <button class="chip is-button" type="button">1 триместр</button>
+                          <button class="chip is-button" type="button">2 триместр</button>
+                          <button class="chip is-button" type="button">3 триместр</button>
+                        </div>
+                      </div>
+                      <div class="quiz_step">
+                        <div class="text-weight-semibold">Шаг 2</div>
+                        <p class="text-size-small text-color-muted">Выберите филиал</p>
+                        <div class="chips_row">
+                          <button class="chip is-button" type="button">Бутово</button>
+                          <button class="chip is-button" type="button">Арбатская</button>
+                          <button class="chip is-button" type="button">Балашиха</button>
+                        </div>
+                      </div>
+                      <div class="quiz_step">
+                        <div class="text-weight-semibold">Шаг 3</div>
+                        <p class="text-size-small text-color-muted">Контакты</p>
+                        <form class="form_component" action="#" method="get">
+                          <div class="form_grid">
+                            <div class="form_field">
+                              <label class="form-label" for="quiz-name">Имя</label>
+                              <input class="form-input" id="quiz-name" name="name" type="text" />
+                            </div>
+                            <div class="form_field">
+                              <label class="form-label" for="quiz-phone">Телефон</label>
+                              <input class="form-input" id="quiz-phone" name="phone" type="tel" />
+                            </div>
+                          </div>
+                          <button class="button is-primary" type="submit">Отправить заявку</button>
+                          <p class="text-size-small text-color-muted">
+                            Дисклеймер: “имеются противопоказания…” и согласия на ПД.
+                          </p>
+                        </form>
+                      </div>
+                    </div>
+
+                    <div class="button-group" style="margin-top: 10px">
+                      <a class="button is-secondary" href="#">Открыть квиз на отдельной странице</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer_component" aria-label="Подвал сайта">
+        <div class="padding-global">
+          <div class="container-large">
+            <div class="padding-section-medium">
+              <div class="footer_layout">
+                <div class="footer_col">
+                  <div class="text-weight-semibold">MESEDCLINIC</div>
+                  <p class="text-size-small text-color-muted">
+                    Прототип. В подвале: документы, лицензии, политика, реквизиты, контакты.
+                  </p>
+                </div>
+                <div class="footer_col">
+                  <div class="text-weight-semibold">Навигация</div>
+                  <a class="footer_link" href="#">Клиники</a>
+                  <a class="footer_link" href="#">Услуги</a>
+                  <a class="footer_link" href="#">Врачи</a>
+                  <a class="footer_link" href="#">Акции</a>
+                </div>
+                <div class="footer_col">
+                  <div class="text-weight-semibold">Документы</div>
+                  <a class="footer_link" href="#">Лицензии</a>
+                  <a class="footer_link" href="#">Политика конфиденциальности</a>
+                  <a class="footer_link" href="#">Согласие на обработку ПД</a>
+                </div>
+                <div class="footer_col">
+                  <div class="text-weight-semibold">Контакты</div>
+                  <a class="footer_link" href="tel:+79999999999">+7 (999) 999‑99‑99</a>
+                  <a class="footer_link" href="#">WhatsApp</a>
+                  <a class="footer_link" href="#">Telegram</a>
+                </div>
+              </div>
+
+              <div class="footer_disclaimer text-size-small text-color-muted">
+                Имеются противопоказания. Необходима консультация специалиста.
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
+

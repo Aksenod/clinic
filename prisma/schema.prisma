@@ -1,0 +1,283 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Пользователи (администраторы)
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String
+  name      String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// Филиалы клиники
+model Clinic {
+  id          String    @id @default(cuid())
+  slug        String    @unique
+  name        String
+  address     String
+  city        String    @default("Москва")
+  metro       String?
+  phone       String
+  email       String?
+  latitude    Float?
+  longitude   Float?
+  workingHours String?  // JSON строка или текстовое поле
+  description String?   @db.Text
+  // SEO
+  seoTitle       String?
+  seoDescription String?
+  // Relations
+  doctors        DoctorClinic[]
+  services       ServiceClinic[]
+  symptoms       SymptomClinic[]
+  leads          Lead[]
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  @@map("clinics")
+}
+
+// Врачи
+model Doctor {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  fullName    String
+  specialties String[] // массив специальностей
+  bio         String?  @db.Text
+  photo       String?  // URL фото
+  experience  Int?     // лет опыта
+  // SEO
+  seoTitle       String?
+  seoDescription String?
+  // Relations
+  clinics        DoctorClinic[]
+  services       DoctorService[]
+  symptoms       SymptomDoctor[]
+  leads          Lead[]
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  @@map("doctors")
+}
+
+// Направления (hub-страницы)
+model Direction {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  title       String
+  description String?  @db.Text
+  content     Json?    // блоковый контент
+  order       Int      @default(0)
+  isActive    Boolean  @default(true)
+  // SEO
+  seoTitle       String?
+  seoDescription String?
+  seoKeywords    String?
+  // Relations
+  services       Service[]
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  @@map("directions")
+}
+
+// Услуги
+model Service {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  title       String
+  shortDesc   String?  @db.Text
+  description String?  @db.Text
+  content     Json?    // блоковый контент (Rich Text Editor)
+  price       Int?     // цена в копейках
+  priceFrom   Boolean  @default(false) // "от X руб"
+  preparation String?  @db.Text // подготовка к услуге
+  procedure   String?  @db.Text // порядок проведения
+  order       Int      @default(0)
+  isActive    Boolean  @default(true)
+  // Каналы
+  isSeoCore    Boolean @default(false)
+  isContextAd  Boolean @default(false)
+  // Relations
+  directionId  String
+  direction    Direction @relation(fields: [directionId], references: [id], onDelete: Cascade)
+  clinics      ServiceClinic[]
+  doctors      DoctorService[]
+  symptoms     SymptomService[]
+  promotions   PromotionService[]
+  leads        Lead[]
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@map("services")
+}
+
+// "Что мы лечим" (проблемы/симптомы)
+model Symptom {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  title       String
+  description String?  @db.Text
+  content     Json?    // блоковый контент
+  order       Int      @default(0)
+  isActive    Boolean  @default(true)
+  // SEO
+  seoTitle       String?
+  seoDescription String?
+  seoKeywords    String?
+  // Relations
+  services       SymptomService[]
+  clinics        SymptomClinic[]
+  doctors        SymptomDoctor[]
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  @@map("symptoms")
+}
+
+// Акции
+model Promotion {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  title       String
+  description String?  @db.Text
+  priceOld    Int?     // старая цена в копейках
+  priceNew    Int?     // новая цена в копейках
+  validFrom   DateTime?
+  validTo     DateTime?
+  isActive    Boolean  @default(true)
+  // Relations
+  services     PromotionService[]
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@map("promotions")
+}
+
+// Статьи/блог
+model Article {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  title       String
+  excerpt     String?  @db.Text
+  content     Json?    // блоковый контент
+  coverImage  String?  // URL обложки
+  publishedAt DateTime?
+  isPublished Boolean  @default(false)
+  // SEO
+  seoTitle       String?
+  seoDescription String?
+  // Relations
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  @@map("articles")
+}
+
+// Заявки/лиды
+model Lead {
+  id        String   @id @default(cuid())
+  type      String   // "clinic" | "online"
+  clinicId  String?
+  clinic    Clinic?  @relation(fields: [clinicId], references: [id], onDelete: SetNull)
+  doctorId  String?
+  doctor    Doctor?  @relation(fields: [doctorId], references: [id], onDelete: SetNull)
+  serviceId String?
+  service   Service? @relation(fields: [serviceId], references: [id], onDelete: SetNull)
+  directionId String?
+  // Контактные данные
+  name      String
+  phone     String
+  email     String?
+  comment   String?  @db.Text
+  // Статус
+  status    String   @default("new") // "new" | "in_progress" | "done" | "cancelled"
+  // Метаданные
+  source    String?  // источник заявки
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("leads")
+}
+
+// Связи многие-ко-многим
+model DoctorClinic {
+  doctorId String
+  doctor   Doctor @relation(fields: [doctorId], references: [id], onDelete: Cascade)
+  clinicId String
+  clinic   Clinic @relation(fields: [clinicId], references: [id], onDelete: Cascade)
+
+  @@id([doctorId, clinicId])
+  @@map("doctor_clinics")
+}
+
+model ServiceClinic {
+  serviceId String
+  service   Service @relation(fields: [serviceId], references: [id], onDelete: Cascade)
+  clinicId  String
+  clinic    Clinic  @relation(fields: [clinicId], references: [id], onDelete: Cascade)
+
+  @@id([serviceId, clinicId])
+  @@map("service_clinics")
+}
+
+model DoctorService {
+  doctorId  String
+  doctor    Doctor  @relation(fields: [doctorId], references: [id], onDelete: Cascade)
+  serviceId String
+  service   Service @relation(fields: [serviceId], references: [id], onDelete: Cascade)
+
+  @@id([doctorId, serviceId])
+  @@map("doctor_services")
+}
+
+model SymptomService {
+  symptomId String
+  symptom   Symptom @relation(fields: [symptomId], references: [id], onDelete: Cascade)
+  serviceId String
+  service   Service @relation(fields: [serviceId], references: [id], onDelete: Cascade)
+
+  @@id([symptomId, serviceId])
+  @@map("symptom_services")
+}
+
+model SymptomClinic {
+  symptomId String
+  symptom   Symptom @relation(fields: [symptomId], references: [id], onDelete: Cascade)
+  clinicId  String
+  clinic    Clinic  @relation(fields: [clinicId], references: [id], onDelete: Cascade)
+
+  @@id([symptomId, clinicId])
+  @@map("symptom_clinics")
+}
+
+model SymptomDoctor {
+  symptomId String
+  symptom   Symptom @relation(fields: [symptomId], references: [id], onDelete: Cascade)
+  doctorId  String
+  doctor    Doctor  @relation(fields: [doctorId], references: [id], onDelete: Cascade)
+
+  @@id([symptomId, doctorId])
+  @@map("symptom_doctors")
+}
+
+model PromotionService {
+  promotionId String
+  promotion   Promotion @relation(fields: [promotionId], references: [id], onDelete: Cascade)
+  serviceId   String
+  service     Service   @relation(fields: [serviceId], references: [id], onDelete: Cascade)
+
+  @@id([promotionId, serviceId])
+  @@map("promotion_services")
+}
