@@ -1,10 +1,15 @@
 /** @type {import('next').NextConfig} */
+const isExport = process.env.NEXT_EXPORT === 'true'
+
 const nextConfig = {
-  output: 'export',
-  basePath: '/clinic',
-  assetPrefix: '/clinic',
+  ...(isExport && {
+    output: 'export',
+    basePath: '/clinic',
+    assetPrefix: '/clinic',
+    trailingSlash: true,
+  }),
   images: {
-    unoptimized: true,
+    ...(isExport && { unoptimized: true }),
     remotePatterns: [
       {
         protocol: 'https',
@@ -12,7 +17,6 @@ const nextConfig = {
       },
     ],
   },
-  trailingSlash: true,
 }
 
 module.exports = nextConfig
