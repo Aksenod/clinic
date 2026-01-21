@@ -1,9 +1,9 @@
 "use client"
 
 import { useSearchParams } from "next/navigation"
-import { useState } from "react"
+import { useState, Suspense } from "react"
 
-export default function ServicesPage() {
+function ServicesPageContent() {
   const searchParams = useSearchParams()
   const activeDirection = searchParams.get("direction") || "all"
   const [selectedDirection, setSelectedDirection] = useState(activeDirection)
@@ -263,5 +263,13 @@ export default function ServicesPage() {
         </div>
       </div>
     </main>
+  )
+}
+
+export default function ServicesPage() {
+  return (
+    <Suspense fallback={<div>Загрузка...</div>}>
+      <ServicesPageContent />
+    </Suspense>
   )
 }

@@ -6,6 +6,14 @@ interface PageProps {
   }
 }
 
+export function generateStaticParams() {
+  return [
+    { slug: "butovo" },
+    { slug: "arbatskaya" },
+    { slug: "balashiha" },
+  ]
+}
+
 export default async function ClinicPage({ params }: PageProps) {
   const clinicData = getClinicData(params.slug)
 

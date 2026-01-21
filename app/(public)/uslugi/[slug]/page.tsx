@@ -6,6 +6,12 @@ interface PageProps {
   }
 }
 
+export function generateStaticParams() {
+  return [
+    { slug: "vedenie-beremennosti" },
+  ]
+}
+
 export async function generateMetadata({ params }: PageProps) {
   return {
     title: `Услуга: ${params.slug}`,

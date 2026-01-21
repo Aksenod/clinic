@@ -4,6 +4,13 @@ interface PageProps {
   }
 }
 
+export function generateStaticParams() {
+  return [
+    { slug: "vedenie-beremennosti-so-skidkoy" },
+    { slug: "uzi-beremennosti-po-spetcenam" },
+  ]
+}
+
 export default async function PromotionPage({ params }: PageProps) {
   const promo = getPromotionData(params.slug)
 

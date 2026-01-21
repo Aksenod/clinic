@@ -1,13 +1,19 @@
 import Link from "next/link"
 
 import { generateSEOMetadata } from "@/lib/seo"
-import { getSymptomBySlug, type SymptomPageData } from "@/lib/symptoms-config"
+import { getSymptomBySlug, getAllSymptoms, type SymptomPageData } from "@/lib/symptoms-config"
 import { MediaPlaceholder } from "@/components/MediaPlaceholder"
 
 interface PageProps {
   params: {
     slug: string
   }
+}
+
+export function generateStaticParams() {
+  return getAllSymptoms().map((symptom) => ({
+    slug: symptom.slug,
+  }))
 }
 
 export async function generateMetadata({ params }: PageProps) {

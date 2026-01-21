@@ -7,6 +7,12 @@ interface PageProps {
   }
 }
 
+export function generateStaticParams() {
+  return [
+    { slug: "beremennost" },
+  ]
+}
+
 export async function generateMetadata({ params }: PageProps) {
   const directionData = getDirectionData(params.slug)
   if (!directionData) {

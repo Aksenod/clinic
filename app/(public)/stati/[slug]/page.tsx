@@ -4,6 +4,12 @@ interface PageProps {
   }
 }
 
+export function generateStaticParams() {
+  return [
+    { slug: "chek-list-pered-beremennostyu" },
+  ]
+}
+
 export default async function ArticlePage({ params }: PageProps) {
   const article = getArticleData(params.slug)
 

@@ -4,6 +4,13 @@ interface PageProps {
   }
 }
 
+export function generateStaticParams() {
+  return [
+    { slug: "akusher-ginekolog-1" },
+    { slug: "akusher-ginekolog-2" },
+  ]
+}
+
 export default async function DoctorPage({ params }: PageProps) {
   const doctor = getDoctorData(params.slug)
 

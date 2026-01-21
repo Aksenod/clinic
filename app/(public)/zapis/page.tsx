@@ -1,9 +1,9 @@
 "use client"
 
 import { useSearchParams } from "next/navigation"
-import { useState, useEffect } from "react"
+import { useState, useEffect, Suspense } from "react"
 
-export default function AppointmentPage() {
+function AppointmentPageContent() {
   const searchParams = useSearchParams()
   const serviceParam = searchParams.get("service")
   const directionParam = searchParams.get("direction")
@@ -354,5 +354,13 @@ export default function AppointmentPage() {
         </div>
       </div>
     </main>
+  )
+}
+
+export default function AppointmentPage() {
+  return (
+    <Suspense fallback={<div>Загрузка...</div>}>
+      <AppointmentPageContent />
+    </Suspense>
   )
 }
